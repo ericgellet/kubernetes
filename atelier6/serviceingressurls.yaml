@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1 
+kind: Ingress
+metadata:
+ name: ingress-gen
+spec:
+   tls:
+   - hosts:
+     - test.ilkilab.io
+     secretName: tls-secret
+   rules: 
+   - host: test.ilkilab.io
+     http:
+        paths:
+          - path: /*
+            backend:
+               serviceName: web-nodeport
+               servicePort: 80
+   

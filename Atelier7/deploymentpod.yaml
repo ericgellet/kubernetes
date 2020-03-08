@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 30%
+      maxUnavailable: 30%
+    type: RollingUpdate      
+  template:
+    selector:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: webapp
+        image: ilkiformation/webapache:v1
+        ports:
+        - containerPort: 80
+        - containerPort: 22
+      - name: generator
+        image: ilkiformation/funjokegen:v1

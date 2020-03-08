@@ -1,0 +1,16 @@
+apiVersion: v1 # spécification de la version de l’api utilisée
+kind: Pod # type de ressource à créer, ici un pod
+metadata:
+ name: fortune # nom de la ressource, celui-ci doit être unique dans un même namespace
+ labels:
+   name: fortune
+spec: # définition des spécifications du pod
+ containers:
+ - name: web 
+   image: ilkiformation/webapache:v1
+   ports:
+    - containerPort: 80 #
+    - containerPort: 22
+ - name: genrator
+   image: ilkiformation/fortunegen:v1
+     

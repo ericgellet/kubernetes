@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: simpleweb-bdd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mybdd
+  template:
+    metadata:
+      labels:
+        app: mybdd
+    spec:
+      containers:
+      - name: mybdd
+        image: ilkiformation/simpleweb_bdd:v1
+        ports:
+        - containerPort: 3306

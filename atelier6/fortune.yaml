@@ -1,0 +1,16 @@
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: fortune
+  labels:
+    app: homesvc
+spec: 
+ containers:
+ - name: webfront 
+   image: ilkiformation/webapache:v1
+   ports:
+    - containerPort: 80 
+    - containerPort: 22
+ - name: generator
+   image: ilkiformation/fortunegen:v1
+     

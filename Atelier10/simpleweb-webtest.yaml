@@ -1,0 +1,37 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: simpleweb-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontweb
+  template:
+    metadata:
+      labels:
+        app: frontweb
+    spec:
+      containers:
+      - name: frontweb
+        image: ilkiformation/apache:v1
+        ports:
+          - containerPort: 80
+        volumeMounts:
+        - name: html
+          mountPath: /var/www/simpleweb/
+        - name: css
+          mountPath: /var/www/simpleweb/css/
+        - name: templates
+          mountPath: /var/www/simpleweb/templates/
+      volumes:
+      - name: html
+        configMap:
+           name:  frontweb-html
+      - name: css
+        configMap:
+           name:  frontweb-css
+      - name: templates
+        configMap:
+           name:  frontweb-templates
+        

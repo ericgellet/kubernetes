@@ -1,0 +1,11 @@
+apiVersion: v1 # spécification de la version de l’api utilisée
+kind: Pod # type de ressource à créer, ici un pod
+metadata:
+ name: apache # nom de la ressource, celui-ci doit être unique dans un même namespace
+ namespace: default # namespace dans lequel déployer la ressource
+spec: # définition des spécifications du pod
+ containers:
+ - name: apache # nom du container visible dans Kubernetes
+   image: httpd # image du container à utiliser
+   ports:
+    - containerPort: 80 #

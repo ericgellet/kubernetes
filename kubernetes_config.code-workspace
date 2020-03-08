@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cloudcode.kubeconfigs": [
+			{
+				"name": "/google-cloud-sdk/bin/gcloud",
+				"configPath": "/google-cloud-sdk/bin/gcloud"
+			},
+			{
+				"name": "c:\\Users\\FR10649\\.kube\\config",
+				"configPath": "c:\\Users\\FR10649\\.kube\\config"
+			},
+			{
+				"name": "c:\\Users\\FR10649\\.kube\\config",
+				"configPath": "c:\\Users\\FR10649\\.kube\\config"
+			}
+		],
+		"cloudcode.active-kubeconfig": "c:\\Users\\FR10649\\.kube\\config"
+	}
+}

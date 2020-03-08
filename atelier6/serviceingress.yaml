@@ -1,0 +1,18 @@
+apiVersion: v1 
+kind: Service 
+metadata:
+ namespace: formation
+ name: egtest  
+spec: 
+  type: NodePort
+  selector:
+     app: generatorsvc
+  ports:
+  - name: http
+    port: 81
+    targetPort: 80
+  - name: ssh 
+    port: 22
+    targetPort: 22
+
+
